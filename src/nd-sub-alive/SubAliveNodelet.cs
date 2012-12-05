@@ -2,12 +2,12 @@
 using System.Text;
 using ZeroMQ;
 
-namespace Nodes.ResPing
+namespace Nodes.SubAlive
 {
     /// <summary>
     /// A simple ping response nodelet.
     /// </summary>
-    public class ResPingNodelet
+    public class SubAliveNodelet
     {
         /// <summary>
         /// Starts the nodelet.
@@ -16,18 +16,14 @@ namespace Nodes.ResPing
         public void Start(Options options)
         {
             using (var context = ZmqContext.Create())
-            using (var server = context.CreateSocket(SocketType.REP))
+            using (var subscriber = context.CreateSocket(SocketType.SUB))
             {
 				var endpoint = string.Format("tcp://{0}", options.SocketBind);
-				Console.WriteLine("Binding to: {0}", endpoint);
-                server.Bind(endpoint);
+				Console.WriteLine("Connecting to: {0}", endpoint);
+                //subscriber.Subscribe("alive");
+                subscriber.Connect(endpoint);
 
-                while (true)
-                {
-                    // Wait for next request from client
-                    string message = server.Receive(Encoding.Unicode);
-					server.Send(message, Encoding.Unicode);
-                }
+                
             }
         }
 

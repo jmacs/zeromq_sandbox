@@ -24,12 +24,6 @@ namespace Nodes.PubSubProxy
             using (ZmqSocket frontend = context.CreateSocket(SocketType.SUB),
                              backend = context.CreateSocket(SocketType.PUB))
             {
-				Trace.Assert(string.IsNullOrWhiteSpace(options.SocketConnection), 
-				             "Connection socket is invalid; cannot be null or whitespace.");
-
-				Trace.Assert(string.IsNullOrWhiteSpace(options.SocketBind), 
-				             "Bind socket is invalid; cannot be null or whitespace.");
-
                 ConnectFrontEnd(frontend, string.Format("tcp://{0}", options.SocketConnection));
 
                 BindBackEnd(backend, string.Format("tcp://{0}",options.SocketBind));

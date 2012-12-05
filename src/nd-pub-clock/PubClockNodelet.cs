@@ -21,9 +21,6 @@ namespace Nodes.PubClock
             using (var context = ZmqContext.Create())
             using (var publisher = context.CreateSocket(SocketType.PUB))
             {
-				Trace.Assert(string.IsNullOrWhiteSpace(options.SocketBind), 
-				             "Bind socket is invalid; cannot be null or whitespace.");
-
                 BindSocket(publisher, string.Format("tcp://{0}",options.SocketBind));
 
                 ForwardAllMessages(publisher);

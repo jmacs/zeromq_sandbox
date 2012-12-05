@@ -11,7 +11,7 @@ namespace Nodes.ReqPing
     /// </summary>
     public class ReqPingNodelet
     {
-		const int NumberOfMessages = 4;
+        const int NumberOfMessages = 4;
 
         /// <summary>
         /// Starts the nodelet.
@@ -22,26 +22,23 @@ namespace Nodes.ReqPing
             using (var context = ZmqContext.Create())
             using (var client = context.CreateSocket(SocketType.REQ))
             {
-				Trace.Assert(string.IsNullOrWhiteSpace(options.SocketConnection), 
-				             "Connection socket is invalid; cannot be null or whitespace.");
+                var endpoint = string.Format("tcp://{0}", options.SocketConnection);
+                Console.WriteLine("Connecting to: {0}", endpoint);
+                client.Connect(endpoint);
 
-				var endpoint = string.Format("tcp://{0}", options.SocketConnection);
-				Console.WriteLine("Connecting to: {0}", endpoint);
-				client.Connect(endpoint);
+                var sw = new Stopwatch();
 
-				var sw = new Stopwatch();
-
-				foreach(var i in Enumerable.Range(1, NumberOfMessages))
-				{
-					Console.WriteLine("Message {0} of {1} sent", i, NumberOfMessages);
-					var message = DateTime.UtcNow.Ticks.ToString();
-					sw.Restart();
-					client.Send(message, Encoding.Unicode);
-					var reply = client.Receive(Encoding.Unicode);
-					sw.Stop();
-					var echo = message == reply ? 1 : 0;
-					Console.WriteLine("{0}: Reply received in {1}ms", echo, sw.ElapsedMilliseconds);
-				}
+                foreach(var i in Enumerable.Range(1, NumberOfMessages))
+                {
+                    Console.WriteLine("Message {0} of {1} sent", i, NumberOfMessages);
+                    var message = DateTime.UtcNow.Ticks.ToString();
+                    sw.Restart();
+                    client.Send(message, Encoding.Unicode);
+                    var reply = client.Receive(Encoding.Unicode);
+                    sw.Stop();
+                    var messageIsMatch = message == reply ? 1 : 0;
+                    Console.WriteLine("{0}: Reply received in {1}ms", messageIsMatch, sw.ElapsedMilliseconds);
+                }
                 
             }
         }

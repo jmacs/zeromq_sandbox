@@ -20,7 +20,7 @@ namespace Nodelet
                 {
                     Console.WriteLine("{0}: {1}", inner.GetType(), inner.Message);
                     Console.WriteLine(inner.StackTrace);
-					inner = inner.InnerException;
+                    inner = inner.InnerException;
                 }
                 
                 returnCode = 1;
