@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nodelet", "..\src\Nodelet\Nodelet.csproj", "{6F2ABBA0-4427-4F2F-8B61-535211336086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-pubsub-proxy", "..\src\nd-pubsub-proxy\nd-pubsub-proxy.csproj", "{080B6B5C-9FC0-484E-A95D-BEB61AF9F17A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-pub-clock", "..\src\nd-pub-clock\nd-pub-clock.csproj", "{F486A34E-3416-412D-BEFD-875A05A96865}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-res-ping", "..\src\nd-res-ping\nd-res-ping.csproj", "{6C24A607-1A88-495A-AA30-36CB07139255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-req-ping", "..\src\nd-req-ping\nd-req-ping.csproj", "{6C24A607-1A22-495A-BB30-36CB07139255}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{080B6B5C-9FC0-484E-A95D-BEB61AF9F17A}.Debug|x86.ActiveCfg = Debug|x86
+		{080B6B5C-9FC0-484E-A95D-BEB61AF9F17A}.Debug|x86.Build.0 = Debug|x86
+		{080B6B5C-9FC0-484E-A95D-BEB61AF9F17A}.Release|x86.ActiveCfg = Release|x86
+		{080B6B5C-9FC0-484E-A95D-BEB61AF9F17A}.Release|x86.Build.0 = Release|x86
+		{6C24A607-1A22-495A-BB30-36CB07139255}.Debug|x86.ActiveCfg = Debug|x86
+		{6C24A607-1A22-495A-BB30-36CB07139255}.Debug|x86.Build.0 = Debug|x86
+		{6C24A607-1A22-495A-BB30-36CB07139255}.Release|x86.ActiveCfg = Release|x86
+		{6C24A607-1A22-495A-BB30-36CB07139255}.Release|x86.Build.0 = Release|x86
+		{6C24A607-1A88-495A-AA30-36CB07139255}.Debug|x86.ActiveCfg = Debug|x86
+		{6C24A607-1A88-495A-AA30-36CB07139255}.Debug|x86.Build.0 = Debug|x86
+		{6C24A607-1A88-495A-AA30-36CB07139255}.Release|x86.ActiveCfg = Release|x86
+		{6C24A607-1A88-495A-AA30-36CB07139255}.Release|x86.Build.0 = Release|x86
+		{6F2ABBA0-4427-4F2F-8B61-535211336086}.Debug|x86.ActiveCfg = Debug|x86
+		{6F2ABBA0-4427-4F2F-8B61-535211336086}.Debug|x86.Build.0 = Debug|x86
+		{6F2ABBA0-4427-4F2F-8B61-535211336086}.Release|x86.ActiveCfg = Release|x86
+		{6F2ABBA0-4427-4F2F-8B61-535211336086}.Release|x86.Build.0 = Release|x86
+		{F486A34E-3416-412D-BEFD-875A05A96865}.Debug|x86.ActiveCfg = Debug|x86
+		{F486A34E-3416-412D-BEFD-875A05A96865}.Debug|x86.Build.0 = Debug|x86
+		{F486A34E-3416-412D-BEFD-875A05A96865}.Release|x86.ActiveCfg = Release|x86
+		{F486A34E-3416-412D-BEFD-875A05A96865}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ..\src\nd-pubsub-proxy\nd-pubsub-proxy.csproj
+	EndGlobalSection
+EndGlobal
