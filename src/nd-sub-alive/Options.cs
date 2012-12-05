@@ -5,8 +5,8 @@ namespace Nodes.SubAlive
 {
     public class Options : CommandLineOptionsBase
     {
-        [Option("b", "bind", Required = true, HelpText = "Bind socket endpoint for accepting connections.")]
-        public string SocketBind { get; set; }
+        [Option("c", "connect", Required = true, HelpText = "Connection socket endpoint for subscribing to messages.")]
+        public string SocketConnect { get; set; }
 
         public bool IsValid { get; protected set; }
 

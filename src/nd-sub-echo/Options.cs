@@ -1,12 +1,15 @@
 ﻿using System;
 using Nodelet;
 
-namespace Nodes.ResPing
+namespace Nodes.SubEcho
 {
-    public class Options : CommandLineOptionsBase 
+    public class Options : CommandLineOptionsBase
     {
-        [Option("b", "bind", Required = true, HelpText = "Bind socket endpoint for accepting connections.")]
-        public string SocketBind { get; set; }
+        [Option("c", "connect", Required = true, HelpText = "Connection socket endpoint for subscribing to messages.")]
+        public string SocketConnect { get; set; }
+
+        [Option("s", "subscribe", Required = false, HelpText = "Name of the subscription channel. If empty, will subscribe to all channels.")]
+        public string SubscriptionChannel { get; set; }
 
         public bool IsValid { get; protected set; }
 

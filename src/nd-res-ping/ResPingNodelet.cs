@@ -17,6 +17,7 @@ namespace Nodes.ResPing
         {
             using (var context = ZmqContext.Create())
             using (var server = context.CreateSocket(SocketType.REP))
+            using (var publisher = context.CreateSocket(SocketType.PUB))
             {
 				var endpoint = string.Format("tcp://{0}", options.SocketBind);
 				Console.WriteLine("Binding to: {0}", endpoint);
@@ -25,7 +26,7 @@ namespace Nodes.ResPing
                 while (true)
                 {
                     // Wait for next request from client
-                    string message = server.Receive(Encoding.Unicode);
+                    var message = server.Receive(Encoding.Unicode);
 					server.Send(message, Encoding.Unicode);
                 }
             }

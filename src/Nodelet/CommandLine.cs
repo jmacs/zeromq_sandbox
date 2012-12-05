@@ -2762,14 +2762,14 @@ namespace Nodelet
         {
             var title = ReflectionUtil.GetAttribute<AssemblyTitleAttribute>();
             if (title == null) throw new InvalidOperationException("HelpText::AutoBuild() requires that you define AssemblyTitleAttribute.");
-            var version = ReflectionUtil.GetAttribute<AssemblyInformationalVersionAttribute>();
-            if (version == null) throw new InvalidOperationException("HelpText::AutoBuild() requires that you define AssemblyInformationalVersionAttribute.");
+            var version = options.GetType().Assembly.GetName().Version;
+            if (version == null) throw new InvalidOperationException("HelpText::AutoBuild() requires that you define AssemblyVersionAttribute.");
             var copyright = ReflectionUtil.GetAttribute<AssemblyCopyrightAttribute>();
             if (copyright == null) throw new InvalidOperationException("HelpText::AutoBuild() requires that you define AssemblyCopyrightAttribute.");
 
             var auto = new HelpText
             {
-                Heading = new HeadingInfo(Path.GetFileNameWithoutExtension(title.Title), version.InformationalVersion),
+                Heading = new HeadingInfo(Path.GetFileNameWithoutExtension(title.Title), version.ToString()),
                 Copyright = copyright.Copyright,
                 AdditionalNewLineAfterOption = true,
                 AddDashesToOption = true
