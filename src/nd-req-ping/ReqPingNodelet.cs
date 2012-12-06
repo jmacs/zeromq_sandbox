@@ -32,10 +32,14 @@ namespace Nodes.ReqPing
                 {
                     Console.WriteLine("Message {0} of {1} sent", i, NumberOfMessages);
                     var message = DateTime.UtcNow.Ticks.ToString();
-                    sw.Restart();
-                    client.Send(message, Encoding.Unicode);
+                    
+					sw.Restart();
+                    
+					client.Send(message, Encoding.Unicode);
                     var reply = client.Receive(Encoding.Unicode);
-                    sw.Stop();
+                    
+					sw.Stop();
+
                     var messageIsMatch = message == reply ? 1 : 0;
                     Console.WriteLine("{0}: Reply received in {1}ms", messageIsMatch, sw.ElapsedMilliseconds);
                 }

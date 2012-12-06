@@ -62,7 +62,10 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="clrzmq">
+        <Reference Include="clrzmq" Condition="'$(Configuration)'=='DebugMono' Or '$(Configuration)'=='ReleaseMono'">
+      <HintPath>..\..\lib\clrzmq.3.0.0-rc1\mono\clrzmq.dll</HintPath>
+    </Reference>
+    <Reference Include="clrzmq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ef95cdc29d237b0d" Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
       <HintPath>..\..\lib\clrzmq.3.0.0-rc1\clrzmq.dll</HintPath>
     </Reference>
     <Reference Include="System" />

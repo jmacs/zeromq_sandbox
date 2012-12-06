@@ -10,8 +10,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nodes.SubEcho</RootNamespace>
     <AssemblyName>nd-sub-echo</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -46,6 +44,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseMono|x86'">
     <OutputPath>..\..\bin\Mono\Release\</OutputPath>
@@ -62,15 +62,9 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="clrzmq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ef95cdc29d237b0d, processorArchitecture=MSIL" Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
-      <HintPath>..\..\lib\clrzmq.3.0.0-rc1\clrzmq.dll</HintPath>
-    </Reference>
-    <Reference Include="clrzmq, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86" Condition="'$(Configuration)'=='DebugMono' Or '$(Configuration)'=='ReleaseMono'">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\clrzmq.3.0.0-rc1\mono\clrzmq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +72,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="clrzmq" Condition="'$(Configuration)'=='DebugMono' Or '$(Configuration)'=='ReleaseMono'">
+      <HintPath>..\..\lib\clrzmq.3.0.0-rc1\mono\clrzmq.dll</HintPath>
+    </Reference>
+    <Reference Include="clrzmq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ef95cdc29d237b0d" Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+      <HintPath>..\..\lib\clrzmq.3.0.0-rc1\clrzmq.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Options.cs" />
