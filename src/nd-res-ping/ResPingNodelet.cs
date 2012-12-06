@@ -27,6 +27,7 @@ namespace Nodes.ResPing
                 {
                     // Wait for next request from client
                     var message = server.Receive(Encoding.Unicode);
+                    Console.WriteLine("Message recieved: {0}", message);
 					server.Send(message, Encoding.Unicode);
                 }
             }
