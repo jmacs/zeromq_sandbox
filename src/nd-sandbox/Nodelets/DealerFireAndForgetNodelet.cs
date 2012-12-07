@@ -3,7 +3,7 @@ using System.Text;
 using ZeroMQ;
 using System.Linq;
 
-namespace Nodes.Sandbox
+namespace Nodes.Sandbox.Nodelets
 {
 	public class DealerFireAndForgetNodelet
 	{

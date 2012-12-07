@@ -11,6 +11,9 @@ namespace Nodes.Sandbox
 		[Option("b", "bind", Required = true, HelpText = "Bind socket endpoint.")]
         public string SocketBind { get; set; }
 
+        [Option("s", "switch", Required = true, HelpText = "A stupid hack for controlling what nodelets to use in the tests.")]
+        public string Switch { get; set; }
+
         public bool IsValid { get; protected set; }
 
         [HelpOption]
