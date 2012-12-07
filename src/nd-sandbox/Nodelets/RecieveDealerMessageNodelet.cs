@@ -3,9 +3,9 @@ using System.Text;
 using ZeroMQ;
 using System.Linq;
 
-namespace Nodes.Sandbox
+namespace Nodes.Sandbox.Nodelets
 {
-	public class RecieveDealerMessageNodelet
+	public class DealerFireAndForgetRecieveMessageNodelet
 	{
 		public void Start(object ooptions)
 		{
@@ -23,8 +23,10 @@ namespace Nodes.Sandbox
 				{
                     try
                     {
+
                         var message = server.Receive(Encoding.Unicode);
                         Console.WriteLine("   received message {0}, message {1}", receivedFrames, message);
+                      
                         receivedFrames++;
                         //REP has to send a response, if we do two sequential receives we'll crash
                         server.Send("", Encoding.Unicode); 

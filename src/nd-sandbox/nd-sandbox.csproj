@@ -38,7 +38,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Commandlineparameters>-b *:5554 -c localhost:5554</Commandlineparameters>
-    <ConsolePause>false</ConsolePause>
+    <Externalconsole>true</Externalconsole>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseMono|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -63,8 +63,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SandboxNodelet.cs" />
-    <Compile Include="DealerFireAndForgetNodelet.cs" />
-    <Compile Include="RecieveDealerMessageNodelet.cs" />
+    <Compile Include="Nodelets\RecieveDealerMessageNodelet.cs" />
+    <Compile Include="Nodelets\DealerFireAndForgetNodelet.cs" />
+    <Compile Include="Nodelets\LoadBalancerNodelet.cs" />
+    <Compile Include="Nodelets\LoadBalancerWorkerNodelet.cs" />
+    <Compile Include="Nodelets\LoadBalancerWorkServerNodelet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -75,5 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Nodelets\" />
   </ItemGroup>
 </Project>
