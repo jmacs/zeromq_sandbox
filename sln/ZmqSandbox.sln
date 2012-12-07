@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-sub-echo", "..\src\nd-su
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-sandbox", "..\src\nd-sandbox\nd-sandbox.csproj", "{B95BF938-F3D5-4C52-B81A-483DDC89D471}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nd-broker", "..\src\nd-broker\nd-broker.csproj", "{B93BG938-F4D5-4C55-B81A-483DDD49D471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -177,6 +179,30 @@ Global
 		{8D18D609-7061-4A0B-882E-A9EC81E2D928}.ReleaseMono|Mixed Platforms.Build.0 = ReleaseMono|x86
 		{8D18D609-7061-4A0B-882E-A9EC81E2D928}.ReleaseMono|x86.ActiveCfg = ReleaseMono|x86
 		{8D18D609-7061-4A0B-882E-A9EC81E2D928}.ReleaseMono|x86.Build.0 = ReleaseMono|x86
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Debug|x86.Build.0 = Debug|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.DebugMono|Any CPU.ActiveCfg = DebugMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.DebugMono|Any CPU.Build.0 = DebugMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.DebugMono|Mixed Platforms.ActiveCfg = DebugMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.DebugMono|Mixed Platforms.Build.0 = DebugMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.DebugMono|x86.ActiveCfg = DebugMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.DebugMono|x86.Build.0 = DebugMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Release|x86.ActiveCfg = Release|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.Release|x86.Build.0 = Release|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.ReleaseMono|Any CPU.ActiveCfg = ReleaseMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.ReleaseMono|Any CPU.Build.0 = ReleaseMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.ReleaseMono|Mixed Platforms.ActiveCfg = ReleaseMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.ReleaseMono|Mixed Platforms.Build.0 = ReleaseMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.ReleaseMono|x86.ActiveCfg = ReleaseMono|Any CPU
+		{B93BG938-F4D5-4C55-B81A-483DDD49D471}.ReleaseMono|x86.Build.0 = ReleaseMono|Any CPU
 		{B95BF938-F3D5-4C52-B81A-483DDC89D471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B95BF938-F3D5-4C52-B81A-483DDC89D471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B95BF938-F3D5-4C52-B81A-483DDC89D471}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -227,7 +253,7 @@ Global
 		{F486A34E-3416-412D-BEFD-875A05A96865}.ReleaseMono|x86.Build.0 = ReleaseMono|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\src\nd-sandbox\nd-sandbox.csproj
+		StartupItem = ..\src\nd-broker\nd-broker.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
